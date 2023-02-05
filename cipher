@@ -1,0 +1,32 @@
+ciphertext str = 'edsgickxhuklzveqzvkxwkzukcvuh';
+ciphertext = convertToNumbers(ciphertext str);
+
+a inv = 3;
+b = 10;
+
+plaintext = mod(a inv*(ciphertext − b),26);
+plaintext str = convertToString(plaintext);
+plaintext str
+
+function numArray = convertToNumbers(s)
+
+a = uint8('a');
+s = lower(s);
+for i=1:length(s)
+    t = uint8(s(i));
+      if t < a
+        numArray(i) = −1;
+    else
+      numArray(i) = double(t − a);
+    end
+end
+%numArray = uint8(s) − a;
+numArray = double(numArray);
+
+function str = convertToString(x)
+
+a = uint8('a');
+
+%x = x + a;
+
+str = char(uint8(x)+a);
